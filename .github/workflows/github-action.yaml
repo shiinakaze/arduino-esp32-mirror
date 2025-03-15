@@ -1,4 +1,4 @@
-name: Monthly Python Script Workflow
+name: replace-mirror-url
 
 on:
   schedule:
