@@ -28,4 +28,4 @@ jobs:
         pip install requests
 
     - name: run main.py
-      run: python main.py
+      run: python ./main.py
