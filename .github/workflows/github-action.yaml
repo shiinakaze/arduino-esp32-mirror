@@ -3,6 +3,12 @@ name: replace-mirror-url
 on:
   schedule:
     - cron: "0 0 1 * *"
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Manual trigger Reason'
+        required: false
+        default: 'Test'
 
 jobs:
   execute-script:
