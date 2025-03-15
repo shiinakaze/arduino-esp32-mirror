@@ -1,0 +1,25 @@
+name: Monthly Python Script Workflow
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+
+jobs:
+  execute-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checks-out
+      uses: actions/checkout@v4
+
+    - name: setup python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: install dependency
+      run: |
+        pip install requests
+
+    - name: run main.py
+      run: python main.py
