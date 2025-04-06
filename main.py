@@ -19,12 +19,12 @@ def fetch_and_replace_urls():
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(modified_content)
 
-        print(f"文件已成功处理并保存为 {output_file}")
+        print(f"The file was successfully processed and saved as {output_file}")
 
     except requests.exceptions.RequestException as e:
-        print(f"网络请求失败: {e}")
+        print(f"Network request failed: {e}")
     except Exception as e:
-        print(f"处理过程中出现错误: {e}")
+        print(f"An error occurred during processing: {e}")
 
 if __name__ == "__main__":
     fetch_and_replace_urls()
