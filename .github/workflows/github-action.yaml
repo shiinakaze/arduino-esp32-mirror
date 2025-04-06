@@ -18,8 +18,9 @@ jobs:
     - name: checks-out
       uses: actions/checkout@v4
       with:
-        # 使用 USER_TOKEN 并保留凭据用于后续推送
-        token: ${{ secrets.USER_TOKEN }}
+        # 使用 GITHUB_TOKEN 并保留凭据用于后续推送
+        token: ${{ secrets.GITHUB_TOKEN }}
+        persist-credentials: true
 
     - name: setup python
       uses: actions/setup-python@v5
