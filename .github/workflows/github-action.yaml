@@ -38,6 +38,15 @@ jobs:
         # 配置 Git 用户信息
         git config --global user.name "shiinakaze"
         git config --global user.email "shiinakaze@qq.com"
+
+        # 检查是否有改动
+        if git diff --quiet; then
+          echo "No changes to commit."
+        else
+          git add package_esp32_index.json
+          git commit -m "chore: Auto-update package_esp32_index.json"
+          git push
+        fi
         
         # 添加文件、提交并推送
         git add package_esp32_index.json
